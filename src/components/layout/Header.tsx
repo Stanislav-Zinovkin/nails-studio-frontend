@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 
 const navItems = [
-    {href: "#hero", label:"Hero"},
     {href: "#services", label: "Services"},
     {href: "#gallery", label: "Gallery"},
     {href: "#prices", label: "Prices"},
@@ -18,11 +17,11 @@ const [open, setOpen] = useState(false);
 
 
 return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link href="/" className="text-2xl font-semibold tracking-wide">
-          Nails Studio
+          <img src='/logo.svg' alt="WM" className='w-20 h-20'/>
         </Link>
 
         {/*Desktop Menu*/}
