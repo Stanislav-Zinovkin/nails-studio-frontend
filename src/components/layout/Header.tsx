@@ -21,7 +21,7 @@ return (
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link href="/" className="text-2xl font-semibold tracking-wide">
-          <img src='/logo.svg' alt="WM" className='w-20 h-20'/>
+          <img src='/logo.svg' alt="WM" className='w-20 h-20 fill-none'/>
         </Link>
 
         {/*Desktop Menu*/}
