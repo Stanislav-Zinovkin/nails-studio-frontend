@@ -20,8 +20,13 @@ return (
     <header className="sticky top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-semibold tracking-wide">
-          <img src='/logo.svg' alt="WM" className='w-20 h-20 fill-none'/>
+        <Link href="/">
+          <svg className='w-20 h-20 fill-current'
+               viewBox='0 0 24 24'
+               xmlns="http://www.w3.org/2000/svg"
+               >
+            <use href='#icon-logo'/>
+          </svg>
         </Link>
 
         {/*Desktop Menu*/}
