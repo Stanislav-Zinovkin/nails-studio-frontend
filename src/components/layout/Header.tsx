@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { buttonClass, navLinkClass } from '../styles/ui';
 
 
 const navItems = [
@@ -17,11 +18,11 @@ const [open, setOpen] = useState(false);
 
 
 return (
-    <header className="sticky top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 left-0 w-full z-50 bg-[#FFF9F0] backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link href="/">
-          <svg className='w-20 h-20 fill-current'
+          <svg className='w-20 h-20 fill-[#10069F]'
                viewBox='0 0 24 24'
                xmlns="http://www.w3.org/2000/svg"
                >
@@ -35,13 +36,13 @@ return (
                 <a
                  key={item.href}
                  href={item.href}
-                 className='hover:text-pink-500 transition'>{item.label}</a>
+                 className={navLinkClass}>{item.label}</a>
             ))}
         </nav>
         {/*CTA Button*/}
         <Link
           href="#contacts"
-          className='hidden md:block bg-pink-500 text-white px-5 py-3 rounded-full hover:bg-pink-600 transition'>Zapisz</Link>
+          className={buttonClass}>Zapisz</Link>
         {/*Mobile Burger*/}
         <button 
            className='md:hidden'

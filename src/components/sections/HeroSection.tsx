@@ -7,19 +7,19 @@ export default function HeroSection() {
   return (
     <section
       id='hero'
-      className='relative w-full h-screen flex items-center justify-center'
+      className='relative  w-full h-screen flex items-center justify-center'
     >
       {/* --- BACKGROUND IMAGE --- */}
-      <Image
-        src='/brocarot-bmw.jpg'
-        alt='BMW e34 the best car ever'
-        fill
-        className='object-cover'
-        priority
-      />
+      <picture>
+        <source srcSet='/Hero-1x.webp, /Hero-4x.webp' type='image/webp'/>
+        <img
+          src='/Hero-4x.webp'
+          alt='Hero image'
+          className='w-screen h-screen '/>
+      </picture>
 
       {/* --- TEXT OVERLAY --- */}
-      <div className='absolute inset-0 flex flex-col items-start justify-center px-6 md:px-20 bg-gray-900/40'>
+      <div className='absolute inset-0 flex flex-col items-center justify-center px-6 md:px-20 bg-gray-950/3'>
         <h1 className='text-4xl md:text-6xl font-bold text-white leading-tight'>
           Nails Studio by Vita M.
         </h1>

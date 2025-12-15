@@ -18,7 +18,7 @@ section{
 }
 
 body{
-  @apply text-gray-800 bg-white;
+  @apply text-gray-800 bg-[#FFFFF0];
 }
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}
