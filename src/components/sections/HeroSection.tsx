@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-
+{/*className='container' */}
 export default function HeroSection() {
   return (
     <section
@@ -11,7 +11,7 @@ export default function HeroSection() {
     >
       {/* --- BACKGROUND IMAGE --- */}
       <picture>
-        <source srcSet='/Hero-1x.webp, /Hero-4x.webp' type='image/webp'/>
+        <source srcSet='/Hero-1x.webp, /Hero-2x.webp' type='image/webp'/>
         <img
           src='/Hero-4x.webp'
           alt='Hero image'
@@ -19,18 +19,28 @@ export default function HeroSection() {
       </picture>
 
       {/* --- TEXT OVERLAY --- */}
-      <div className='absolute inset-0 flex flex-col items-center justify-center px-6 md:px-20 bg-gray-950/3'>
-        <h1 className='text-4xl md:text-6xl font-bold text-white leading-tight'>
-          Nails Studio by Vita M.
+      <div className=' absolute inset-0 flex flex-col items-center justify-center px-6 md:px-20 bg-gray-950/3'>
+        <h1 className='font-title text-4xl md:text-7xl text-white leading-tight uppercase tracking-wide animate-fadeIn'>
+          Nails Space
         </h1>
-        <p className='mt-4 text-lg md:text-xl text-gray-200 max-w-lg'>
-          TUT BYDE TEXT PRO TE JAKA VITA HAROSHA MASTERITSA I T.D. T.P.
+        <p className='mb-12 font-sans text-sm md:text-base text-gray-100 max-w-lg uppercase tracking-[0.2em] opacity-90'>
+          You beaty in your hands
         </p>
         <Link
           href='#contacts'
-          className='mt-6 bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full text-lg transition shadow-lg hover:shadow-xl'
-        >
-          Services
+          className="
+                      font-sans text-xs uppercase tracking-[0.3em] 
+                      text-white border border-white/40 
+                      px-10 py-4 
+                      rounded-sm 
+                      bg-white/5 backdrop-blur-sm
+                      hover:bg-white hover:text-[#10069F] hover:border-white
+                      transition-all duration-700 ease-in-out 
+                      focus:outline-none 
+                      shadow-2xl
+                    "
+                   >
+          Learn more
         </Link>
       </div>
     </section>

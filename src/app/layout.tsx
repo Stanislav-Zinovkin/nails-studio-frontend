@@ -2,6 +2,7 @@ import './globals.css'
 import Header from '@/components/layout/Header'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
+import { Tenor_Sans, Montserrat } from 'next/font/google'
 
 
 interface RootLayoutProps {
@@ -13,12 +14,23 @@ export const metadata: Metadata = {
   description: 'Landing page for nail studio',
 }
 
+ const TenorSans = Tenor_Sans({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-tenor'
+})
+
+ const montserrat = Montserrat({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-motserrat'
+})
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
         <Header />
-        <main className='container'>{children}</main>
+        <main >{children}</main>
         
       </body>
     </html>
