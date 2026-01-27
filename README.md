@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💅 Nails Space Studio
 
-## Getting Started
+A premium, high-performance landing page designed for a professional nail salon. This project focuses on luxury aesthetics, exceptional user experience, and multi-language accessibility.
 
-First, run the development server:
+**🌐 Live Demo:** [https://your-project-link.vercel.app](https://your-project-link.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
+- **Framework:** Next.js 15+ (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Typography:** Tenor Sans (Vogue-style), Montserrat
+- **i18n:** Custom Multilingual Architecture (PL, UA, EN)
+- **Deployment:** Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
+- **Multilingual Support:** Seamless switching between Polish, Ukrainian, and English.
+- **Responsive & Mobile-First:** Optimized for all screen sizes with fluid animations.
+- **Performance Optimized:** High Core Web Vitals scores through Next.js Image and Font optimization.
+- **Production Ready:** Clean architecture, scalable component structure, and SEO-friendly metadata.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📂 Project Structure
+- `src/app` — File-based routing and page definitions.
+- `src/components` — Modular UI components (Layout, Sections, Common).
+- `src/context` — Global state management (Language & Theme).
+- `src/data` — Static content management (Prices, Translations, Gallery).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🏗 Development
 
-## Deploy on Vercel
+To run the project locally for maintenance or updates:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Install dependencies:
+   ```bash
+   npm install
