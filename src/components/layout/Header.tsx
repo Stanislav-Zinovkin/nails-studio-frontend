@@ -11,12 +11,12 @@ import { useLanguage } from '@/context/LanguageContext';
 export default function Header() {
 const [open, setOpen] = useState(false);
 
-const {locale, setLocale} = useLanguage();
+const {locale, setLocale, t} = useLanguage();
 const navItems = [
-    {href: "#services", label: "Services"},
-    {href: "#gallery", label: "Gallery"},
-    {href: "#prices", label: "Prices"},
-    {href: "#contacts", label: "Contacts"},  
+    {href: "#services", label: t.nav.services},
+    {href: "#gallery", label: t.nav.gallery},
+    {href: "#prices", label: t.nav.prices},
+    {href: "#contacts", label: t.nav.contacts},  
 ];
 
 return (
@@ -58,7 +58,7 @@ return (
         <Link
           href="#contacts"
           className="hidden md:block font-sans uppercase tracking-widest border-0 text-[#10069F] rounded-sm px-6 py-2 hover:bg-[#10069F]/80 hover:text-white transition-all focus:outline-none transition-all duration-500 ease-in-out">
-            Book visit
+            {t.nav.bookvisit}
         </Link>
 
 
@@ -92,7 +92,7 @@ return (
                     style={{ transitionDelay: `${navItems.length * 50}ms`}}
                     className={`font-sans focus:outline-none text-[12px] py-3 uppercase tracking-widest text-[#10069F] font-bold transition-all duration-700 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} `}
                     onClick={() => setOpen(false)}>
-                      Zapisz
+                      {t.nav.bookvisit}
                   </Link>
               </div>
           </nav>

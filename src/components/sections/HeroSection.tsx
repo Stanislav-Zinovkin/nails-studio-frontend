@@ -2,8 +2,10 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useLanguage } from '@/context/LanguageContext'
 {/*className='container' */}
 export default function HeroSection() {
+  const {t} = useLanguage();
   return (
     <section
       id='hero'
@@ -21,10 +23,10 @@ export default function HeroSection() {
       {/* --- TEXT OVERLAY --- */}
       <div className=' absolute inset-0 flex flex-col items-center justify-center px-6 md:px-20 bg-gray-950/3'>
         <h1 className='font-title text-4xl md:text-7xl text-white leading-tight uppercase tracking-wide animate-fadeIn'>
-          Nails Space
+          {t.hero.title}
         </h1>
         <p className='mb-12 font-sans text-sm md:text-base text-gray-100 max-w-lg uppercase tracking-[0.2em] opacity-90'>
-          You beaty in your hands
+          {t.hero.subtitle}
         </p>
         <Link
           href='#contacts'
@@ -40,7 +42,7 @@ export default function HeroSection() {
                       shadow-2xl
                     "
                    >
-          Learn more
+          {t.hero.cta}
         </Link>
       </div>
     </section>
