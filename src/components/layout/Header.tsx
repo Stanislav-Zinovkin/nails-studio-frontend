@@ -2,20 +2,22 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { buttonClass, navLinkClass } from '../styles/ui';
+import {  navLinkClass } from '../styles/ui';
+import { useLanguage } from '@/context/LanguageContext';
 
 
+
+
+export default function Header() {
+const [open, setOpen] = useState(false);
+
+const {locale, setLocale} = useLanguage();
 const navItems = [
     {href: "#services", label: "Services"},
     {href: "#gallery", label: "Gallery"},
     {href: "#prices", label: "Prices"},
     {href: "#contacts", label: "Contacts"},  
 ];
-
-export default function Header() {
-const [open, setOpen] = useState(false);
-
-
 
 return (
     <header className="sticky top-0 left-0 w-full z-50 bg-[#FDF5E6]/65 backdrop-blur-md shadow-sm">
@@ -40,14 +42,26 @@ return (
                     {item.label}
                 </a>
             ))}
-        </nav>
+        </nav> 
+               {/*Language Switcher*/}
+        <div className="flex gap-2 items-center mr-4 border-r border-[#10069F]/10 pr-4">
+          {(['pl', 'ua', 'en'] as const).map((lang) => (<button 
+              key={lang} 
+              onClick={() => setLocale(lang)}
+              className={`font-sans text-[10px] uppercase tracking-wider transition-all
+              ${locale === lang ? 'text-[#10069F] font-bold' : 'text-[#10069F]/40 hover:text-[#10069F]'}`}>
+           {lang}</button>))}
+
+        </div>
 
         {/* CTA Button */}
         <Link
           href="#contacts"
           className="hidden md:block font-sans uppercase tracking-widest border-0 text-[#10069F] rounded-sm px-6 py-2 hover:bg-[#10069F]/80 hover:text-white transition-all focus:outline-none transition-all duration-500 ease-in-out">
-            Zapisz
+            Book visit
         </Link>
+
+
 
         {/* Mobile Burger */}
         <button 
@@ -58,27 +72,31 @@ return (
       </div>
 
       {/* Mobile Menu */}
-      {open && (
-          <nav className='md:hidden bg-[#FFF9F0] border-t border-blue-100 shadow-lg animate-fadeIn'>
+     
+          <nav className={`md:hidden absolute top-full left-0 w-full bg-[#FDF5E6] border-t border-blue-100 shadow-xl
+                          transition-all duration-700 ease-in-out overflow-hidden
+          ${open ? 'max-h-[450px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
               <div className='flex flex-col py-6 px-4 gap-6 text-center'>
-                  {navItems.map((item) => (
+                  {navItems.map((item, index) => (
                       <a
                         key={item.href}
                         href={item.href}
-                        className='font-sans text-sm uppercase tracking-widest text-gray-700 hover:text-[#10069F] focus:outline-none'
+                        style={{transitionDelay: `${index * 50}ms`}}
+                        className={`font-sans text-[12px] uppercase tracking-[0.3em] text-[#10069F]/70 hover:text-[#10069F] transition-all duration-500 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                         onClick={() => setOpen(false)}>
                           {item.label}
                         </a>
                   ))}
                   <Link
                     href="#contacts"
-                    className='border-0 text-[#10069F] py-3 uppercase tracking-widest focus:outline-none'
+                    style={{ transitionDelay: `${navItems.length * 50}ms`}}
+                    className={`font-sans focus:outline-none text-[12px] py-3 uppercase tracking-widest text-[#10069F] font-bold transition-all duration-700 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} `}
                     onClick={() => setOpen(false)}>
                       Zapisz
                   </Link>
               </div>
           </nav>
-      )}
+    
     </header>
 );
 }
