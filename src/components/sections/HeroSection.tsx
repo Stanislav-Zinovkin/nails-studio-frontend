@@ -29,7 +29,7 @@ export default function HeroSection() {
           {t.hero.subtitle}
         </p>
         <Link
-          href='#about'
+          href='/about'
           className="
                       font-sans text-xs uppercase tracking-[0.3em] 
                       text-white border border-white/40 
