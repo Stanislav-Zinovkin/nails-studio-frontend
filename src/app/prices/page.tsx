@@ -1,8 +1,9 @@
+import PricesSection from "@/components/sections/PricesSection";
+
 export default function PricesPage() {
   return (
-    <div className="pt-32 min-h-screen">
-      <h1>Contacts</h1>
-      <p>This page is under construction.</p>
+    <div className="pt-32 pb-20 min-h-screen">
+      <PricesSection />
     </div>
   );
 }

@@ -15,7 +15,7 @@ const {locale, setLocale, t} = useLanguage();
 const navItems = [
     {href: "#services", label: t.nav.services},
     {href: "#gallery", label: t.nav.gallery},
-    {href: "#prices", label: t.nav.prices},
+    {href: "/prices", label: t.nav.prices},
     {href: "#contacts", label: t.nav.contacts},  
 ];
 
@@ -56,7 +56,7 @@ return (
 
         {/* CTA Button */}
         <Link
-          href="#contacts"
+          href="https://booksy.com/pl-pl/283628_nailspace-vita-mosondz_paznokcie_15608_poznan?do=invite&utm_medium=profile_share_from_profile"
           className="hidden md:block font-sans uppercase tracking-widest border-0 text-[#10069F] rounded-sm px-6 py-2 hover:bg-[#10069F]/80 hover:text-white transition-all focus:outline-none transition-all duration-500 ease-in-out">
             {t.nav.bookvisit}
         </Link>

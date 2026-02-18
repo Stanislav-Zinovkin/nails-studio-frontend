@@ -18,7 +18,9 @@ section{
 }
 
 body{
-  @apply text-gray-800 bg-[#FFFFF0];
+  @apply text-gray-800;
+  background: linear-gradient(135deg, #1a3a6d 0%, #7b8da5 50%, #e2d8c3 100%);
+  background-attachment: fixed
 }
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}

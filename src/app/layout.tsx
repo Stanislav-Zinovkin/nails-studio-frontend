@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { Tenor_Sans, Montserrat } from 'next/font/google'
 import { LanguageProvider } from '@/context/LanguageContext'
+import SvgSprite from "@/public/SvgSprite"
 
 
 interface RootLayoutProps {
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="pl">
       <body className="antialiased">
         <LanguageProvider>
+           <SvgSprite/>
            <Header />
            <main >{children}</main>
         </LanguageProvider>
