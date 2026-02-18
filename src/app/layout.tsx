@@ -12,8 +12,11 @@ interface RootLayoutProps {
 } 
 
 export const metadata: Metadata = {
-  title: 'Nails Studio',
+  title: 'Nail Studio',
   description: 'Landing page for nail studio',
+  icons: {
+    icon: '/favicon-new.svg?v=3', 
+  },
 }
 
  const TenorSans = Tenor_Sans({
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="pl">
+    <html lang="pl" className={`${TenorSans.variable} ${montserrat.variable}`}>
       <body className="antialiased">
         <LanguageProvider>
            <SvgSprite/>
