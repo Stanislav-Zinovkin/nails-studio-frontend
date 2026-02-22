@@ -66,7 +66,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, t }) => {
                     <a href="https://www.google.com/maps/dir/?api=1&destination=Owczarska+1,+Poznan,+Poland"
                        target="blank"
                        rel="noopener noreferrer"
-                       className="text-md text-[#10069F]/80 leading-relaxed font-sans">
+                       className="text-lg text-[#10069F] hover:opacity-60 transition-all duration-300 tracking-wide font-sans">
                         {t.contactModal.address}
                     </a>
                 </div>
