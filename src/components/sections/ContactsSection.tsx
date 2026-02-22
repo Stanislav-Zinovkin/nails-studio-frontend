@@ -63,9 +63,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, t }) => {
                     <span className="text-[9px] text-[#10069F]/40 uppercase tracking-[0.25em] mb-2 font-medium">
                         {t.contactModal.location}
                     </span>
-                    <p className="text-md text-[#10069F]/80 leading-relaxed font-sans">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Owczarska+1,+Poznan,+Poland"
+                       target="blank"
+                       rel="noopener noreferrer"
+                       className="text-md text-[#10069F]/80 leading-relaxed font-sans">
                         {t.contactModal.address}
-                    </p>
+                    </a>
                 </div>
                </div>
             </div>
