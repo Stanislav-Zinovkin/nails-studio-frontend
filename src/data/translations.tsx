@@ -47,7 +47,7 @@ export const translations = {
       categories: {
         popular: "Popularne usługi",
         manicure: "Manicure",
-        pedicure: "Pedicure (PodoDisk)",
+        pedicure: "Pedicure (PodoDysk)",
         mavex: "System MAVEX (SPA)",
         extras: "Dodatki"
       },

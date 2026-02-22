@@ -10,12 +10,12 @@ export default function PricesSection() {
         <div className="flex justify-between items-end py-4 border-b border-white/10 group hover:border-[#FFFFF0]/40 transition-all duration-300">
             <span className="font-sans taxt-white/80 uppercase tracking-widest text-sm group-hover:text-[#FFFFF0] transition-colors">{name}</span>
             <div className="flex-gorw mx-4 border-b border-dotted border-white/20 mb-1 group-hover:border-white/40 transition-colors"></div>
-            <span className="font-tenor text-[#10069F] font-bold">{price}<span className="text-xs ml-1 opacity-60 font-sans font-normal"> zł</span></span>
+            <span className="font-sans text-[#10069F]/70 font-medium">{price}<span className="text-[9px] text-[#10069F]/40 uppercase tracking-[0.25em] mb-2 font-medium"> zł</span></span>
         </div>
     );
     return (
-        <section className="max-w-3xl mx-auto px-4 pt-16 pb-24 text-[#FFFFF0]">
-            <h2 className="font-tenor text-4xl text-center uppercase mb-20 tracking-[0.2em] animate-fadeIn">{t.pricesPage.title}</h2>
+        <section className="max-w-3xl mx-auto px-4 pt-8 pb-24 text-[#FFFFF0]">
+            <h2 className="font-tenor text-4xl text-center uppercase mb-12 tracking-[0.2em] animate-fadeIn">{t.pricesPage.title}</h2>
             <div className="space-y-16">
             {/*Manicure*/}
             <div className="animate-fadeIn" style={{ animationDelay: '0.1s' }}>
