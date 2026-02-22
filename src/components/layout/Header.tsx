@@ -5,6 +5,7 @@ import { useState } from 'react';
 import {  navLinkClass } from '../styles/ui';
 import { useLanguage } from '@/context/LanguageContext';
 import ContactModal from '../sections/ContactsSection';
+import BookingModal from '../sections/BookingModal';
 
 
 
@@ -12,6 +13,7 @@ import ContactModal from '../sections/ContactsSection';
 export default function Header() {
 const [open, setOpen] = useState(false);
 const [isContactOpen, setIsContactOpen] = useState(false);
+const [isBookingOpen, setIsBookingOpen] = useState(false);
 
 const {locale, setLocale, t} = useLanguage();
 const navItems = [
@@ -65,11 +67,11 @@ return (
         </div>
 
         {/* CTA Button */}
-        <Link
-          href="https://booksy.com/pl-pl/283628_nailspace-vita-mosondz_paznokcie_15608_poznan?do=invite&utm_medium=profile_share_from_profile"
+        <button
+          onClick={() => setIsBookingOpen(true)}
           className="hidden md:block font-sans uppercase tracking-widest border-0 text-[#10069F] rounded-sm px-6 py-2 hover:bg-[#10069F]/80 hover:text-white transition-all focus:outline-none transition-all duration-500 ease-in-out">
             {t.nav.bookvisit}
-        </Link>
+        </button>
 
 
 
@@ -115,11 +117,16 @@ return (
           </nav>
     
     </header>
-    {/* Modal */}
+    {/* Contact Modal */}
     <ContactModal
     isOpen={isContactOpen}
     onClose={() => setIsContactOpen(false)}
     t={t}/>
+    {/*Booking Modal*/}
+    <BookingModal
+    isOpen={isBookingOpen}
+    onClose={() => setIsBookingOpen(false)}
+    t={t} />
     </>
 );
 
