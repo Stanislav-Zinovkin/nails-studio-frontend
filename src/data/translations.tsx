@@ -17,6 +17,16 @@ export const translations = {
       location: "Lokalizacja",
       address: "Poznań, ul. Owczarska 1"
     },
+    bookingModal: {
+      title: "Zarezerwuj wizytę",
+      nameLabel: "Imię i Nazwisko",
+      emailLabel: "Email",
+      phoneLabel: "Telefon",
+      submitBtn: "Zapisz się",
+      booksyLink: "Zarezerwuj przez Booksy",
+      or: "lub",
+      success: "Dziękujemy! Potwierdzenie zostało wysłane na Twój e-mail."
+    },
     hero: {
       title: "Nail Space",
       subtitle: "Twoje piękno w Twoich rękach",
@@ -82,6 +92,16 @@ export const translations = {
       location: "Локалізація",
       address: "Познань, вул. Овчарська 1"
     },
+    bookingModal: {
+      title: "Записатися на візит",
+      nameLabel: "Ім'я та Прізвище",
+      emailLabel: "Email",
+      phoneLabel: "Телефон",
+      submitBtn: "Записатися",
+      booksyLink: "Забронювати через Booksy",
+      or: "або",
+      success: "Дякуємо! Підтвердження надіслано на вашу пошту."
+    },
     hero: {
       title: "Nail Space",
       subtitle: "Твоя краса у твоїх руках",
@@ -146,6 +166,16 @@ export const translations = {
       insta: "Instagram",
       location: "Location",
       address: "Poznań, Owczarska 1 st."
+    },
+    bookingModal: {
+      title: "Book a visit",
+      nameLabel: "Full Name",
+      emailLabel: "Email",
+      phoneLabel: "Phone Number",
+      submitBtn: "Book Now",
+      booksyLink: "Book via Booksy",
+      or: "or",
+      success: "Thank you! Confirmation has been sent to your email."
     },
     hero: {
       title: "Nail Space",

@@ -106,13 +106,17 @@ return (
                   >
                     {t.nav.contacts}
                   </button>
-                  <Link
-                    href="https://booksy.com/pl-pl/283628_nailspace-vita-mosondz_paznokcie_15608_poznan?do=invite&utm_medium=profile_share_from_profile"
-                    style={{ transitionDelay: `${(navItems.length + 1) * 50}ms`}}
-                    className={`font-sans focus:outline-none text-[12px] py-3 uppercase tracking-widest text-[#10069F] font-bold transition-all duration-700 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} `}
-                    onClick={() => setOpen(false)}>
+                  <button
+                      onClick={() => {
+                          setOpen(false);    
+                          setIsBookingOpen(true);  
+                      }}
+                      style={{ transitionDelay: `${(navItems.length + 1) * 50}ms` }}
+                      className={`font-sans focus:outline-none text-[12px] py-3 uppercase tracking-widest text-[#10069F] font-bold transition-all duration-700 
+                                        ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                  >
                       {t.nav.bookvisit}
-                  </Link>
+                  </button>
               </div>
           </nav>
     
