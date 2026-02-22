@@ -4,22 +4,27 @@ import Link from 'next/link';
 import { useState } from 'react';
 import {  navLinkClass } from '../styles/ui';
 import { useLanguage } from '@/context/LanguageContext';
+import ContactModal from '../sections/ContactsSection';
 
 
 
 
 export default function Header() {
 const [open, setOpen] = useState(false);
+const [isContactOpen, setIsContactOpen] = useState(false);
 
 const {locale, setLocale, t} = useLanguage();
 const navItems = [
     {href: "#services", label: t.nav.services},
-    {href: "#gallery", label: t.nav.gallery},
-    {href: "/prices", label: t.nav.prices},
-    {href: "#contacts", label: t.nav.contacts},  
+    {href: "/prices", label: t.nav.prices}, 
 ];
+const handleContactClick = () => {
+  setOpen(false);
+  setIsContactOpen(true);
+}
 
 return (
+  <>
     <header className="sticky top-0 left-0 w-full z-50 bg-[#FDF5E6]/65 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
@@ -42,6 +47,11 @@ return (
                     {item.label}
                 </a>
             ))}
+            {/* Contact-Button */}
+            <button onClick={handleContactClick} className={`${navLinkClass} font-sans text-sm uppercase tracking-[0.2em] focus:outline-none hover:text-[#10069F] transition-colors`}
+            >
+              {t.nav.contacts}
+            </button>
         </nav> 
                {/*Language Switcher*/}
         <div className="flex gap-2 items-center mr-4 border-r border-[#10069F]/10 pr-4">
@@ -87,9 +97,16 @@ return (
                           {item.label}
                         </a>
                   ))}
+                  {/* Contact-mobile*/}
+                  <button onClick={handleContactClick}
+                  style={{ transitionDelay: `${navItems.length * 50}ms`}}
+                  className={`font-sans text-[12px] uppercase tracking-[0.3em] text-[#10069F]/70 hover:text-[#10069F] transition-all duration-500 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                  >
+                    {t.nav.contacts}
+                  </button>
                   <Link
-                    href="#contacts"
-                    style={{ transitionDelay: `${navItems.length * 50}ms`}}
+                    href="https://booksy.com/pl-pl/283628_nailspace-vita-mosondz_paznokcie_15608_poznan?do=invite&utm_medium=profile_share_from_profile"
+                    style={{ transitionDelay: `${(navItems.length + 1) * 50}ms`}}
                     className={`font-sans focus:outline-none text-[12px] py-3 uppercase tracking-widest text-[#10069F] font-bold transition-all duration-700 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} `}
                     onClick={() => setOpen(false)}>
                       {t.nav.bookvisit}
@@ -98,5 +115,12 @@ return (
           </nav>
     
     </header>
+    {/* Modal */}
+    <ContactModal
+    isOpen={isContactOpen}
+    onClose={() => setIsContactOpen(false)}
+    t={t}/>
+    </>
 );
+
 }

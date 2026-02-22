@@ -1,4 +1,5 @@
 import PricesPage from "@/app/prices/page";
+import ContactModal from "@/components/sections/ContactsSection";
 import { title } from "process";
 import { text } from "stream/consumers";
 
@@ -6,10 +7,15 @@ export const translations = {
   pl: {
     nav: {
       services: "Usługi",
-      gallery: "Galeria",
       prices: "Cennik",
       contacts: "Kontakt",
       bookvisit: "Zapisz się",
+    },
+    contactModal: {
+      phone: "Telefon",
+      insta: "Instagram",
+      location: "Lokalizacja",
+      address: "Poznań, ul. Owczarska 1"
     },
     hero: {
       title: "Nail Space",
@@ -66,10 +72,15 @@ export const translations = {
   ua: {
     nav: {
       services: "Послуги",
-      gallery: "Галерея",
       prices: "Ціни",
       contacts: "Контакти",
       bookvisit: "Записатись",
+    },
+    contactModal: {
+      phone: "Телефон",
+      insta: "Інстаграм",
+      location: "Локалізація",
+      address: "Познань, вул. Овчарська 1"
     },
     hero: {
       title: "Nail Space",
@@ -126,10 +137,15 @@ export const translations = {
   en: {
     nav: {
       services: "Services",
-      gallery: "Gallery",
       prices: "Prices",
       contacts: "Contacts",
       bookvisit: "Book now",
+    },
+    contactModal: {
+      phone: "Phone",
+      insta: "Instagram",
+      location: "Location",
+      address: "Poznań, Owczarska 1 st."
     },
     hero: {
       title: "Nail Space",
