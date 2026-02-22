@@ -2,7 +2,7 @@
 
 A premium, high-performance landing page designed for a professional nail salon. This project focuses on luxury aesthetics, exceptional user experience, and multi-language accessibility.
 
-**🌐 Live Demo:** [https://your-project-link.vercel.app](https://your-project-link.vercel.app)
+**🌐 Live Demo:** [(https://nails-studio-frontend.vercel.app/)]((https://nails-studio-frontend.vercel.app/))
 
 ---
 
