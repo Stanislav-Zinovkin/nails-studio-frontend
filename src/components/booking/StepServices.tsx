@@ -5,7 +5,7 @@ export default function StepServices({ onSelect, getServiceName, t }: any ){
         <div className='animate-fadeIn'>
                         <p className='text-[10px] uppercase tracking-[0.3em] text-[#10069F]/40'>{t.pricesPage.title}
                         </p>
-                        <div className='space-y-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar'>
+                        <div className='mt-6 space-y-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar'>
                             {services.map((service) => (
                                 <button 
                                  key={service.id}

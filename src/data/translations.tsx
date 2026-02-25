@@ -1,7 +1,4 @@
-import PricesPage from "@/app/prices/page";
-import ContactModal from "@/components/sections/ContactsSection";
-import { title } from "process";
-import { text } from "stream/consumers";
+'use client'
 
 export const translations = {
   pl: {
@@ -11,6 +8,9 @@ export const translations = {
       contacts: "Kontakt",
       bookvisit: "Zapisz się",
     },
+    common: {
+      back: "Wstecz"
+    },
     contactModal: {
       phone: "Telefon",
       insta: "Instagram",
@@ -19,13 +19,16 @@ export const translations = {
     },
     bookingModal: {
       title: "Zarezerwuj wizytę",
+      pickDate: "Wybierz datę",
+      confirmDate: "Zatwierdź datę",
       nameLabel: "Imię i Nazwisko",
       emailLabel: "Email",
       phoneLabel: "Telefon",
       submitBtn: "Zapisz się",
       booksyLink: "Zarezerwuj przez Booksy",
       or: "lub",
-      success: "Dziękujemy! Potwierdzenie zostało wysłane na Twój e-mail."
+      success: "Dziękujemy! Potwierdzenie zostało wysłane na Twój e-mail.",
+      rodoText: "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności",
     },
     hero: {
       title: "Nail Space",
@@ -75,7 +78,7 @@ export const translations = {
         mavexClassic: "Mavex",
         mavexColor: "Mavex + Malowanie",
         mavexHybrid: "Mavex + Hybryda"
-  }
+      }
     }
   },
 
@@ -86,6 +89,9 @@ export const translations = {
       contacts: "Контакти",
       bookvisit: "Записатись",
     },
+    common: {
+      back: "Назад"
+    },
     contactModal: {
       phone: "Телефон",
       insta: "Інстаграм",
@@ -93,14 +99,18 @@ export const translations = {
       address: "Познань, вул. Овчарська 1"
     },
     bookingModal: {
-      title: "Записатися на візит",
+      title: "Запис на візит",
+      pickDate: "Оберіть дату",
+      confirmDate: "Підтвердити дату",
       nameLabel: "Ім'я та Прізвище",
       emailLabel: "Email",
       phoneLabel: "Телефон",
       submitBtn: "Записатися",
       booksyLink: "Забронювати через Booksy",
       or: "або",
-      success: "Дякуємо! Підтвердження надіслано на вашу пошту."
+      success: "Дякуємо! Підтвердження надіслано на вашу пошту.",
+      rodoText: "Я погоджуюся на обробку моїх персональних даних згідно з політикою конфіденційності ",
+      
     },
     hero: {
       title: "Nail Space",
@@ -125,33 +135,33 @@ export const translations = {
       readMore: {
         text: "Читай більше"
       },
-      cta: "Записатися на візит"
+      cta: "Запис на візит"
     },
     pricesPage: {
-     title: "Прайс-лист",
-     categories: {
-       popular: "Популярні послуги",
-       manicure: "Манікюр",
-       pedicure: "Педикюр (PodoDisk)",
-       mavex: "Система MAVEX (SPA)",
-       extras: "Додатково"
-     },
-     services: {
-       hybrid: "Манікюр гібридний",
-       gel: "Манікюр гелевий",
-       extension: "Нарощування нігтів",
-       classic: "Класичний манікюр",
-       withColor: "З покриттям лаком",
-       removal: "Зняття гібриду",
-       repair: "Ремонт нігтя",
-       pododisk: "PodoDisk (обробка стопи)",
-       pdHybrid: "PodoDisk + Гібрид",
-       pdColor: "PodoDisk + Лак",
-       mavexClassic: "Mavex (кератолітичний педикюр)",
-       mavexColor: "Mavex + Лак",
-       mavexHybrid: "Mavex + Гібрид"
-     }
-},
+      title: "Прайс-лист",
+      categories: {
+        popular: "Популярні послуги",
+        manicure: "Манікюр",
+        pedicure: "Педикюр (PodoDisk)",
+        mavex: "Система MAVEX (SPA)",
+        extras: "Додатково"
+      },
+      services: {
+        hybrid: "Манікюр гібридний",
+        gel: "Манікюр гелевий",
+        extension: "Нарощування нігтів",
+        classic: "Класичний манікюр",
+        withColor: "З покриттям лаком",
+        removal: "Зняття гібриду",
+        repair: "Ремонт нігтя",
+        pododisk: "PodoDisk (обробка стопи)",
+        pdHybrid: "PodoDisk + Гібрид",
+        pdColor: "PodoDisk + Лак",
+        mavexClassic: "Mavex (кератолітичний педикюр)",
+        mavexColor: "Mavex + Лак",
+        mavexHybrid: "Mavex + Гібрид"
+      }
+    },
   },
 
   en: {
@@ -161,6 +171,9 @@ export const translations = {
       contacts: "Contacts",
       bookvisit: "Book now",
     },
+    common: {
+      back: "Back"
+    },
     contactModal: {
       phone: "Phone",
       insta: "Instagram",
@@ -169,13 +182,16 @@ export const translations = {
     },
     bookingModal: {
       title: "Book a visit",
+      pickDate: "Pick a date",
+      confirmDate: "Confirm date",
       nameLabel: "Full Name",
       emailLabel: "Email",
       phoneLabel: "Phone Number",
       submitBtn: "Book Now",
       booksyLink: "Book via Booksy",
       or: "or",
-      success: "Thank you! Confirmation has been sent to your email."
+      success: "Thank you! Confirmation has been sent to your email.",
+      rodoText: 'I agree to the processing of my personal data in accordance with the privacyPolicy',
     },
     hero: {
       title: "Nail Space",
@@ -225,8 +241,8 @@ export const translations = {
         mavexClassic: "Mavex (Callus Removal)",
         mavexColor: "Mavex + Polish",
         mavexHybrid: "Mavex + Hybrid"
-  }
-},
+      }
+    }
   }
 };
 

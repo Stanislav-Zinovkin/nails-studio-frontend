@@ -80,7 +80,7 @@ export default function StepContactForm ({ formData, setFormData, handleSubmit, 
                         {isSubmitting ? '...' : t.bookingModal.submitBtn}
                     </button>
                     <button type='button' onClick={onBack} className="w-full text-[#10069F]/40 text-[9px] uppercase tracking-widest mt-2">
-                        Translate: Back button
+                       {t.common.back}
                     </button>
                 </form>
                 </div> 

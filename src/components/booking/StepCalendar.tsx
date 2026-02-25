@@ -10,7 +10,7 @@ export default function StepCalendar({ date, onSelect, onNext, onBack, locale, t
     return (
         <div className='animate-fadeIn flex flex-col items-center'>
                         <h2 className='font-tenor text-2xl text-[#10069F] uppercase tracking-[0.2em] text-center mb-6'>
-                            Translate: Pick date
+                            {t.bookingModal.pickDate}
                         </h2>
                         <div className='bg-white/50 rounded-[30px] p-4 border border-[#10069F]/5 mb-6'>
                            <DayPicker 
@@ -19,10 +19,7 @@ export default function StepCalendar({ date, onSelect, onNext, onBack, locale, t
                               onSelect={(d) => d && onSelect(d.toISOString())}
                               locale={activeLocale}
                               disabled={{ before: new Date()}}
-                              modifiersClassNames={{
-                                selected: 'bg-[#10069F] text-white rounded-full',
-                                today: 'text-[#10069F] font-bold underline'
-                              }}
+
                               />
                         </div>
 
@@ -30,7 +27,7 @@ export default function StepCalendar({ date, onSelect, onNext, onBack, locale, t
                             <button
                                 onClick={onNext}
                                className='w-full bg-[#10069F] text-white rounded-2xl py-4 uppercase tracking-[0.25em] text-[11px] font-bold hover:bg-[#0c0580] transition-all'>
-                                Translate text: Approve date
+                                {t.bookingModal.confirmDate}
                                </button>
                         )}
                         <button
@@ -38,7 +35,7 @@ export default function StepCalendar({ date, onSelect, onNext, onBack, locale, t
                         onClick={onBack}
                         className='mt-4 text-[#10069F]/40 text-[9px] uppercase tracking-widest hover:text-[#10069F]'
                         >
-                            Translate text: Back 
+                           {t.common.back} 
                         </button>
 
                     </div>
