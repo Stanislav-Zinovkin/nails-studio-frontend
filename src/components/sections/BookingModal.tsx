@@ -1,8 +1,14 @@
 'use client'
+import { services } from '@/data/services';
 import { useState } from 'react';
 
 export default function BookingModal({ isOpen, onClose, t }: any) {
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', date: '', rodoConsert: false });
+    const [step, setStep] = useState(1);
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', date: '', rodoConsert: false, serviceId: 'id' });
+
+    const getServiceName = (key: string) => {
+        return t.pricesPage.services[key] || key;
+    }
     const [shouldHideBooksy, setShouldHideBooksy] = useState(false);
 
     if (!isOpen) return null;
@@ -19,7 +25,7 @@ export default function BookingModal({ isOpen, onClose, t }: any) {
         //  fetch for backend
         alert(t.bookingModal.success);
         onClose();
-        setFormData({ name: '', email: '', phone: '', service: '', date: '', rodoConsert: false  });
+        setFormData({ name: '', email: '', phone: '', service: '', date: '', rodoConsert: false, serviceId: 'id'  });
         setShouldHideBooksy(false);
     };
 
@@ -27,12 +33,41 @@ export default function BookingModal({ isOpen, onClose, t }: any) {
         <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-[#10069F]/15 backdrop-blur-md animate-fadeIn" onClick={onClose}>
             <div className="bg-[#FDF5E6] w-full max-w-md rounded-[40px] p-8 md:p-12 relative shadow-2xl border border-[#10069F]/5" onClick={(e) => e.stopPropagation()}>
                 
+                
                 <button onClick={onClose} className="absolute top-8 right-8 text-[#10069F]/30 hover:text-[#10069F] transition-colors text-xl font-light">✕</button>
+                
+                {step === 1 && (
+                    <div className='animate-fadeIn'>
+                        <p className='text-[10px] uppercase tracking-[0.3em] text-[#10069F]/40'>{t.pricesPage.title}
+                        </p>
+                        <div className='space-y-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar'>
+                            {services.map((service) => (
+                                <button 
+                                 key={service.id}
+                                 type="button"
+                                 onClick={() => {
+                                    setFormData({ ...formData, serviceId: service.id});
+                                    setStep(2);
+                                 }}
+                                 className='w-full flex justify-between items-center px-6 py-4 bg-white/40 border border-[#10069F]/5 rounded-2xl hover:bg-white hover:border-[#10069F]/20 transition-all group'>
+                                    <span className='text-[#10069F] text-sm uppercase tracking-wider group-hover:translate-x-1 transition-transform'>
+                                        {getServiceName(service.translationKey)}
+                                    </span>
+                                    <span className='text-[#10069F]/10 text-xs font-medium'>
+                                    {service.price} zł
+                                    </span>
+                                 </button>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
-                <h2 className="font-tenor text-2xl text-[#10069F] uppercase tracking-[0.2em] text-center mb-10">
+
+                {step === 3 && (       
+                    <div className='animate-fadeIn '>        
+                    <h2 className="font-tenor text-2xl text-[#10069F] uppercase tracking-[0.2em] text-center mb-10">
                     {t.bookingModal.title}
                 </h2>
-
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="group">
                         <label className="text-[9px] uppercase tracking-[0.2em] text-[#10069F]/40 ml-4 mb-1 block">
@@ -97,6 +132,8 @@ export default function BookingModal({ isOpen, onClose, t }: any) {
                         {t.bookingModal.submitBtn}
                     </button>
                 </form>
+                </div> 
+            )}
 
                 <div className={`transition-all duration-700 ease-in-out overflow-hidden ${shouldHideBooksy ? 'max-h-0 opacity-0 mt-0' : 'max-h-60 opacity-100 mt-8'}`}>
                     <div className="flex items-center gap-4 mb-6">
