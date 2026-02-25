@@ -99,6 +99,7 @@ export const translations = {
       address: "Познань, вул. Овчарська 1"
     },
     bookingModal: {
+      title1:"Виберіть послугу",
       title: "Запис на візит",
       pickDate: "Оберіть дату",
       confirmDate: "Підтвердити дату",

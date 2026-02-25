@@ -3,8 +3,8 @@ import { services } from '@/data/services';
 export default function StepServices({ onSelect, getServiceName, t }: any ){
     return (
         <div className='animate-fadeIn'>
-                        <p className='text-[10px] uppercase tracking-[0.3em] text-[#10069F]/40'>{t.pricesPage.title}
-                        </p>
+                        <h2 className='font-tenor text-2xl text-[#10069F] uppercase tracking-[0.2em] text-center mb-10'>{t.bookingModal.title1}
+                        </h2>
                         <div className='mt-6 space-y-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar'>
                             {services.map((service) => (
                                 <button 
