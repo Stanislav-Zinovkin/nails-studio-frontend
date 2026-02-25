@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function BookingModal({ isOpen, onClose, t }: any) {
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', date: '', rodoConsert: false });
     const [shouldHideBooksy, setShouldHideBooksy] = useState(false);
 
     if (!isOpen) return null;
@@ -19,7 +19,7 @@ export default function BookingModal({ isOpen, onClose, t }: any) {
         //  fetch for backend
         alert(t.bookingModal.success);
         onClose();
-        setFormData({ name: '', email: '', phone: '' });
+        setFormData({ name: '', email: '', phone: '', service: '', date: '', rodoConsert: false  });
         setShouldHideBooksy(false);
     };
 
@@ -77,6 +77,20 @@ export default function BookingModal({ isOpen, onClose, t }: any) {
                             type="tel" 
                             className="w-full bg-white/60 border border-[#10069F]/10 rounded-2xl px-6 py-3.5 outline-none focus:border-[#10069F]/30 focus:bg-white transition-all text-[#10069F]" 
                         />
+                    </div>
+                    <div className='space-y-3 px-2 mb-6'>
+                        <label className='flex items-start gap-3 cursor-pointer group'>
+                            <input 
+                                type="checkbox"
+                                required
+                                checked={formData.rodoConsert}
+                                onChange={(e) => setFormData({...formData, rodoConsert: e.currentTarget.checked})}
+                                className="mt-1 w-4 h-4 border-[#10069F]/20 rounded accent-[#10069F]"
+                                />
+                                <span className='text-[10px] text-[#10069F]/60 leading-tight'>
+                                  {t.bookingModal.rodoText} <a href="/privacy-policy" className="underline hover:text-[#10069F]">{t.bookingModal.privacyPolicyLink}</a>
+                                </span>
+                        </label>
                     </div>
 
                     <button type="submit" className="w-full bg-[#10069F] text-white rounded-2xl py-5 uppercase tracking-[0.25em] text-[11px] font-bold hover:bg-[#0c0580] transition-all shadow-lg shadow-[#10069F]/20 mt-4">
