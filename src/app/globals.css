@@ -29,3 +29,36 @@ body{
 .animate-fadeIn {
   animation: fadeIn 1s ease-out forwards;
 }
+
+
+
+.rdp-day:focus-visible {
+  outline: none;
+}
+
+
+.rdp-day_selected, 
+.rdp-day_selected:hover {
+  background-color: rgba(16, 6, 159, 0.05) !important; 
+  border: 1px solid #10069F !important; 
+  color: #10069F !important; 
+  font-weight: 600;
+  border-radius: 12px !important;
+}
+
+
+.rdp-day:hover:not(.rdp-day_selected) {
+  background-color: rgba(16, 6, 159, 0.03) !important;
+  border: 1px solid rgba(16, 6, 159, 0.1);
+}
+
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: rgba(16, 6, 159, 0.03);
+}
+
+.rdp-day_today {
+  font-weight: 900 !important;
+  text-decoration: underline;
+  color: #10069F;
+}
