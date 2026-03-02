@@ -74,6 +74,11 @@ export default function StepContactForm ({ formData, setFormData, handleSubmit, 
                                   {t.bookingModal.rodoText} <a href="/privacy-policy" className="underline hover:text-[#10069F]">{t.bookingModal.privacyPolicyLink}</a>
                                 </span>
                         </label>
+                            <input type='text'
+                                   name='hp_field'
+                                   style={{display: 'none'}}
+                                   tabIndex={-1}
+                                   autoComplete='off'/>
                     </div>
 
                     <button type="submit" disabled={isSubmitting} className="w-full bg-[#10069F] text-white rounded-2xl py-5 uppercase tracking-[0.25em] text-[11px] font-bold hover:bg-[#0c0580] transition-all shadow-lg shadow-[#10069F]/20 mt-4 cursor-pointer">
