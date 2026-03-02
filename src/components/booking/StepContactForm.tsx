@@ -76,10 +76,10 @@ export default function StepContactForm ({ formData, setFormData, handleSubmit, 
                         </label>
                     </div>
 
-                    <button type="submit" disabled={isSubmitting} className="w-full bg-[#10069F] text-white rounded-2xl py-5 uppercase tracking-[0.25em] text-[11px] font-bold hover:bg-[#0c0580] transition-all shadow-lg shadow-[#10069F]/20 mt-4">
+                    <button type="submit" disabled={isSubmitting} className="w-full bg-[#10069F] text-white rounded-2xl py-5 uppercase tracking-[0.25em] text-[11px] font-bold hover:bg-[#0c0580] transition-all shadow-lg shadow-[#10069F]/20 mt-4 cursor-pointer">
                         {isSubmitting ? '...' : t.bookingModal.submitBtn}
                     </button>
-                    <button type='button' onClick={onBack} className="w-full text-[#10069F]/40 text-[9px] uppercase tracking-widest mt-2">
+                    <button type='button' onClick={onBack} className="w-full text-[#10069F]/40 text-[9px] uppercase tracking-widest mt-2 cursor-pointer">
                        {t.common.back}
                     </button>
                 </form>

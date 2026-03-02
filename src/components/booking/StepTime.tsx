@@ -21,9 +21,9 @@ const StepTime = ({ t, selectedTime, onSelect, onNext, onBack}: StepTimeProps) =
             <h3 className="text-[#10069F] text-xl font-light mb-6 text-center">
                 {t.bookingModal.pickTime}
             </h3>
-            <div className="grid grid-cols-3 gap-3 mb-8">
+            <div className="grid grid-cols-3 gap-3 mb-8 ">
                 {timeSlots.map((time) => (
-                    <button key={time} onClick={() => onSelect(time)} className={`py-3 rounded-2xl border transition-all text-sm ${selectedTime === time ? "bg-[#10069F] text-white border-[#10069F] shadow-lg" : "border-[#10069F]/10 text-[#10069F] hover:border-[#10069F]/40"}`}>
+                    <button key={time} onClick={() => onSelect(time)} className={`py-3 rounded-2xl border transition-all cursor-pointer text-sm ${selectedTime === time ? "bg-[#10069F] text-white border-[#10069F] shadow-lg" : "border-[#10069F]/10 text-[#10069F] hover:border-[#10069F]/40"}`}>
                         {time}
                     </button>
                 ))}
@@ -33,14 +33,14 @@ const StepTime = ({ t, selectedTime, onSelect, onNext, onBack}: StepTimeProps) =
                 <button 
                    onClick={onNext}
                    disabled={!selectedTime}
-                   className={`w-full py-4 rounded-[20px] transition-all font-light ${
+                   className={`w-full py-4 rounded-[20px] transition-all font-light cursor-pointer ${
                         selectedTime 
                         ? "bg-[#10069F] text-white shadow-md hover:bg-[#10069F]/90" 
                         : "bg-gray-200 text-gray-400 cursor-not-allowed"
                     }`}>
                         {t.bookingModal.confirmTime}
                     </button>
-                    <button onClick={onBack} className="w-full text-[#10069F]/40 text-[9px] uppercase tracking-widest mt-2">
+                    <button onClick={onBack} className="w-full text-[#10069F]/40 text-[9px] uppercase tracking-widest mt-2 cursor-pointer">
                         {t.common.back}
                     </button>
             </div>

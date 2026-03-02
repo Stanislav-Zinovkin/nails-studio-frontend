@@ -6,9 +6,14 @@ import StepCalendar from '../booking/StepCalendar';
 import StepContactForm from '../booking/StepContactForm';
 import BooksyLink from '../booking/BooksyBooking';
 import StepTime from '../booking/StepTime';
+import { sendBooking } from '@/services/bookingService';
 
 export default function BookingModal({ isOpen, onClose, locale, t }: any) {
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState<number | 'success'>(1);
+    const [isLoading, setIsLoading] = useState(false);
+    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+    const [selectedService, setSelectedService] = useState<any>(null);
+    const [selectedTime, setSelectedTime] = useState<string | null>(null);
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', date: '', time: '', rodoConsert: false, serviceId: 'id' });
 
     const getServiceName = (key: string) => {
@@ -31,8 +36,23 @@ export default function BookingModal({ isOpen, onClose, locale, t }: any) {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        //  fetch for backend
-        alert(t.bookingModal.success);
+        setIsLoading(true);
+        const formData = new FormData(e.target as HTMLFormElement);
+        const bookingDetails = {
+            name: formData.get('name') as string,
+            phone: formData.get('phone') as string,
+            service: selectedService?.title || "",
+            date: selectedDate?.toLocaleDateString() || "",
+            time: selectedTime || "",
+        };
+        try {
+            await sendBooking(bookingDetails);
+            setStep('success');
+        } catch(error) {
+            alert("Something gone wrong Try again later")
+        } finally {
+            setIsLoading(false);
+        }
         onClose();
         setStep(1);
 

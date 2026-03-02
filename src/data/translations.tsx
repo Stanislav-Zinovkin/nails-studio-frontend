@@ -18,7 +18,10 @@ export const translations = {
       address: "Poznań, ul. Owczarska 1"
     },
     bookingModal: {
+      title1: "Wybierz usługę",
       title: "Zarezerwuj wizytę",
+      pickTime: "Wybierz godzinę wizyty",
+      confirmTime: "Zatwierdź godzinę",
       pickDate: "Wybierz datę",
       confirmDate: "Zatwierdź datę",
       nameLabel: "Imię i Nazwisko",
@@ -102,6 +105,7 @@ export const translations = {
       title1:"Виберіть послугу",
       title: "Запис на візит",
       pickDate: "Оберіть дату",
+      pickTime: "Оберіть час візиту",
       confirmDate: "Підтвердити дату",
       nameLabel: "Ім'я та Прізвище",
       emailLabel: "Email",
@@ -182,7 +186,10 @@ export const translations = {
       address: "Poznań, Owczarska 1 st."
     },
     bookingModal: {
+      title1: "Select a service",
       title: "Book a visit",
+      pickTime: "Choose visit time",
+      confirmTime: "Confirm selection",
       pickDate: "Pick a date",
       confirmDate: "Confirm date",
       nameLabel: "Full Name",

@@ -26,14 +26,14 @@ export default function StepCalendar({ date, onSelect, onNext, onBack, locale, t
                         {date && (
                             <button
                                 onClick={onNext}
-                               className='w-full bg-[#10069F] text-white rounded-2xl py-4 uppercase tracking-[0.25em] text-[11px] font-bold hover:bg-[#0c0580] transition-all'>
+                               className='w-full bg-[#10069F] text-white rounded-2xl py-4 uppercase tracking-[0.25em] text-[11px] font-bold hover:bg-[#0c0580] transition-all cursor-pointer'>
                                 {t.bookingModal.confirmDate}
                                </button>
                         )}
                         <button
                         type='button'
                         onClick={onBack}
-                        className='mt-4 text-[#10069F]/40 text-[9px] uppercase tracking-widest hover:text-[#10069F]'
+                        className='mt-4 text-[#10069F]/40 text-[9px] uppercase tracking-widest hover:text-[#10069F] cursor-pointer'
                         >
                            {t.common.back} 
                         </button>
