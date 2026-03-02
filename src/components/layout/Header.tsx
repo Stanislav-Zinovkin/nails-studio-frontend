@@ -27,7 +27,7 @@ const handleContactClick = () => {
 
 return (
   <>
-    <header className="sticky top-0 left-0 w-full z-50 bg-[#FDF5E6]/65 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 left-0 w-full z-50 bg-[#F5F5F7]/65 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link href="/" className="focus:outline-none">
@@ -85,7 +85,7 @@ return (
 
       {/* Mobile Menu */}
      
-          <nav className={`md:hidden absolute top-full left-0 w-full bg-[#FDF5E6] border-t border-blue-100 shadow-xl
+          <nav className={`md:hidden absolute top-full left-0 w-full bg-[#F5F5F7] border-t border-blue-100 shadow-xl
                           transition-all duration-700 ease-in-out overflow-hidden
           ${open ? 'max-h-[450px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
               <div className='flex flex-col py-6 px-4 gap-6 text-center'>

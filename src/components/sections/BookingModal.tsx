@@ -40,7 +40,7 @@ export default function BookingModal({ isOpen, onClose, locale, t }: any) {
 
     return (
         <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-[#10069F]/15 backdrop-blur-md animate-fadeIn" onClick={handleClose}>
-            <div className="bg-[#FDF5E6] w-full max-w-md rounded-[40px] p-8 md:p-12 pt-6 relative shadow-2xl border border-[#10069F]/5" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-[#F5F5F7] w-full max-w-md rounded-[40px] p-8 md:p-12 pt-6 relative shadow-2xl border border-[#10069F]/5" onClick={(e) => e.stopPropagation()}>
                 
                 
                 <button onClick={handleClose} className="absolute top-5 right-8 text-[#10069F]/30 hover:text-[#10069F] transition-colors text-xl font-light z-50 p-2 cursor-pointer">✕</button>

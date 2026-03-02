@@ -18,7 +18,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, t }) => {
             onClick={onClose}
         >
             <div 
-                className="bg-[#FDF5E6] w-full max-w-sm rounded-[32px] p-10 relative shadow-xl border border-[#10069F]/5" 
+                className="bg-[#F5F5F7] w-full max-w-sm rounded-[32px] p-10 relative shadow-xl border border-[#10069F]/5" 
                 onClick={(e) => e.stopPropagation()}
             >
                <button 
