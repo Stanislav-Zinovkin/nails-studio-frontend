@@ -5,10 +5,11 @@ import StepServices from '../booking/StepServices';
 import StepCalendar from '../booking/StepCalendar';
 import StepContactForm from '../booking/StepContactForm';
 import BooksyLink from '../booking/BooksyBooking';
+import StepTime from '../booking/StepTime';
 
 export default function BookingModal({ isOpen, onClose, locale, t }: any) {
     const [step, setStep] = useState(1);
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', date: '', rodoConsert: false, serviceId: 'id' });
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', date: '', time: '', rodoConsert: false, serviceId: 'id' });
 
     const getServiceName = (key: string) => {
         return t.pricesPage.services[key] || key;
@@ -47,7 +48,8 @@ export default function BookingModal({ isOpen, onClose, locale, t }: any) {
                 {step === 1 && <><StepServices t={t} getServiceName={getServiceName} onSelect={(id: string) => {setFormData({...formData, serviceId: id}); setStep(2);}}/>
                 <BooksyLink t={t}/></>}
                 {step === 2 && <StepCalendar t={t} locale={locale} date={formData.date} onSelect={(d: string) => setFormData({...formData, date: d})} onNext={() => setStep(3)} onBack={() => setStep(1)} />}
-                {step === 3 && <StepContactForm t={t} formData={formData} setFormData={setFormData} handleSubmit={handleSubmit} onBack={() => setStep(2)} handleFocus={() => setShouldHideBooksy(true)} handleBlur={() => setShouldHideBooksy(false)} />}
+                {step === 3 && <StepTime t={t} selectedTime={formData.time} onSelect={(time: string) => setFormData({...formData, time: time})} onNext={() => setStep(4)} onBack={() => setStep(2)}/>}    
+                {step === 4 && <StepContactForm t={t} formData={formData} setFormData={setFormData} handleSubmit={handleSubmit} onBack={() => setStep(2)} handleFocus={() => setShouldHideBooksy(true)} handleBlur={() => setShouldHideBooksy(false)} />}
 
             </div>
         </div>
