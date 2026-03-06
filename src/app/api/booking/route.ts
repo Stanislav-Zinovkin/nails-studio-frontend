@@ -1,10 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { bookingSchema } from '@/lib/validations/booking';
+import { bookingRateLimit } from "@/lib/ratelimit";
 
 export async function POST(req: NextRequest) {
     try {
+        {/*validation RateLimits */ }
+        const ip = req.headers.get("x-forwarded-for") ?? "127.0.0.1";
+        const { success } = await bookingRateLimit.limit(ip);
+
+        if (!success) {
+            return NextResponse.json(
+                {error: "It's dosen't work like that:)"},
+                { status: 429 }
+            );
+        }
+        {/*validation import */ }
         const body = await req.json();
-        
+        if (body.hp_field && body.hp_field.length > 0) {
+            return NextResponse.json({ success: true, message: 'Book approved'});
+        }
+        {/*validation TG */ }
         const result = bookingSchema.safeParse(body);
         if (!result.success) {
             return NextResponse.json(result.error.format(), { status: 400 });
@@ -13,15 +28,15 @@ export async function POST(req: NextRequest) {
 
         const botToken = process.env.TELEGRAM_BOT_TOKEN;
         const chatID = process.env.TELEGRAM_CHAT_ID;
-const message = `
-✨ *Новий запис у Nail Space!*
+        const message = `
+             ✨ *Новий запис у Nail Space!*
 
-👤 *Клієнт:* ${name}
-📞 *Телефон:* ${phone}
-💅 *Послуга:* ${service}
-📅 *Дата:* ${date}
-⏰ *Час:* ${time}
-        `.trim();
+             👤 *Клієнт:* ${name}
+             📞 *Телефон:* ${phone}
+             💅 *Послуга:* ${service}
+             📅 *Дата:* ${date}
+             ⏰ *Час:* ${time}
+                     `.trim();
 
             const telegramRes = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             method: 'POST',
