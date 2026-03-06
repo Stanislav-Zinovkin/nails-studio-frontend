@@ -106,6 +106,7 @@ export const translations = {
       title: "Запис на візит",
       pickDate: "Оберіть дату",
       pickTime: "Оберіть час візиту",
+      confirmTime: "Підтвердити час",
       confirmDate: "Підтвердити дату",
       nameLabel: "Ім'я та Прізвище",
       emailLabel: "Email",
