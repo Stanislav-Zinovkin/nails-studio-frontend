@@ -7,6 +7,7 @@ import StepContactForm from '../booking/StepContactForm';
 import BooksyLink from '../booking/BooksyBooking';
 import StepTime from '../booking/StepTime';
 import { sendBooking } from '@/services/bookingService';
+import { services } from '@/data/services';
 
 export default function BookingModal({ isOpen, onClose, locale, t }: any) {
     const [step, setStep] = useState<number | 'success'>(1);
@@ -33,17 +34,33 @@ export default function BookingModal({ isOpen, onClose, locale, t }: any) {
     const handleBlur = () => {
         if (!isFormStarted) setShouldHideBooksy(false);
     };
-
+    
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
-        const formData = new FormData(e.target as HTMLFormElement);
+    const form = e.currentTarget as HTMLFormElement;    
+    const hpFieldValue = (form.elements.namedItem('hp_field') as HTMLInputElement)?.value || ""; 
+    let displayDate = formData.date;
+    if (formData.date) {
+        const dateObj = new Date(formData.date);
+        displayDate = dateObj.toLocaleDateString('uk-UA',{
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+    }
+    const serviceData = services.find(s => s.id === formData.serviceId);
+    const serviceName = serviceData ? (t.pricesPage.services[serviceData.translationKey] || serviceData.translationKey)
+                                    : formData.serviceId;
         const bookingDetails = {
-            name: formData.get('name') as string,
-            phone: formData.get('phone') as string,
-            service: selectedService?.title || "",
-            date: selectedDate?.toLocaleDateString() || "",
-            time: selectedTime || "",
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            service: serviceName,
+            date: displayDate,
+            time: formData.time,
+            rodoConsert: formData.rodoConsert,
+            hp_field: hpFieldValue,
         };
         try {
             await sendBooking(bookingDetails);
