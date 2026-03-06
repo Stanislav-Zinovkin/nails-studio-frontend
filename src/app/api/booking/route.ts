@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { bookingSchema } from '@/lib/validations/booking';
 import { bookingRateLimit } from "@/lib/ratelimit";
+import { sendConfirmationEmail } from "@/lib/mail";
 
 export async function POST(req: NextRequest) {
     try {
@@ -24,7 +25,7 @@ export async function POST(req: NextRequest) {
         if (!result.success) {
             return NextResponse.json(result.error.format(), { status: 400 });
         }
-        const { name, phone, service,date,time} = result.data;
+        const { name, phone, service,date,time, email} = result.data;
 
         const botToken = process.env.TELEGRAM_BOT_TOKEN;
         const chatID = process.env.TELEGRAM_CHAT_ID;
@@ -52,6 +53,9 @@ export async function POST(req: NextRequest) {
             const errorText = await telegramRes.text();
             console.error("Помилка Telegram:", errorText);
             return NextResponse.json({ success: false, error: "Telegram error" }, { status: 500 });
+        }
+        if (email) {
+            sendConfirmationEmail(email, name, service, date, time);
         }
         
         
