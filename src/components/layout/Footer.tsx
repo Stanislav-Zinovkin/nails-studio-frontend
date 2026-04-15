@@ -9,7 +9,7 @@ export default function Footer() {
         <div className='grid grid-cols-1 md:grid-cols-3 items-center gap-8'>
           <div className='flex justify-center md:justify-start order-2 md:order-1'>
             <span className='font-sans text-[11px] uppercase tracking-[0.2em] text-[#10069F]/60'>
-              &copy; 2026 Nails Space. All rights reserved.
+              &copy; 2026 Vita Mosondz Manicure. All rights reserved.
             </span>
           </div>
           <div className='flex justify-center items-center gap-8 order-1 md:order-2'>

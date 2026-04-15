@@ -34,12 +34,12 @@ export const translations = {
       rodoText: "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności",
     },
     hero: {
-      title: "Nail Space",
+      title: "Vita Mosondz Manicure",
       subtitle: "Twoje piękno w Twoich rękach",
       cta: "Dowiedz się więcej",
     },
     aboutPage: {
-      title: "Nail Space",
+      title: "Vita Mosondz Manicure",
       subtitle: "Estetyka i profesjonalna pielęgnacja w każdym detalu",
       philosophy: {
         title: "Filozofia marki",
@@ -119,12 +119,12 @@ export const translations = {
       
     },
     hero: {
-      title: "Nail Space",
+      title: "Vita Mosondz Manicure",
       subtitle: "Твоя краса у твоїх руках",
       cta: "Дізнатись більше",
     },
     aboutPage: {
-      title: "Nail Space",
+      title: "Vita Mosondz Manicure",
       subtitle: "Естетика та професійний догляд у кожній деталі",
       philosophy: {
         title: "Філософія бренду",
@@ -203,12 +203,12 @@ export const translations = {
       rodoText: 'I agree to the processing of my personal data in accordance with the privacyPolicy',
     },
     hero: {
-      title: "Nail Space",
+      title: "Vita Mosondz Manicure",
       subtitle: "Your beauty in your hands",
       cta: "Learn more",
     },
     aboutPage: {
-      title: "Nail Space",
+      title: "Vita Mosondz Manicure",
       subtitle: "Aesthetics and professional care in every detail",
       philosophy: {
         title: "Brand Philosophy",
