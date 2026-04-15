@@ -20,7 +20,7 @@ model Booking {
   service   String
   date      String   
   time      String   
-  
+  duration Int @default(60)
   status    Status   @default(PENDING)
   notes     String?  @db.Text
 }
