@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import PrivacyPolicy from '../sections/PrivacyPolicy'
 
 export default function Footer() {
   return (
@@ -26,7 +27,7 @@ export default function Footer() {
             </a>
           </div>
           <div className='flex justify-center md:justify-end gap-6 order-3 uppercase font-sans text-[10px] tracking-[0.2em]'>
-            <a href='#' className='text-[#10069F]/70 hover:text-[#10069F] transition-colors duration-300'>
+            <a href='../sections/PrivacyPolicy' className='text-[#10069F]/70 hover:text-[#10069F] transition-colors duration-300'>
               Privacy Policy
             </a>
             <a href='#' className='text-[#10069F]/70 hover:text-[#10069F] transition-colors duration-300'>
