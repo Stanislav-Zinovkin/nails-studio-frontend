@@ -5,6 +5,7 @@ import { ReactNode } from 'react'
 import { Tenor_Sans, Montserrat } from 'next/font/google'
 import { LanguageProvider } from '@/context/LanguageContext'
 import SvgSprite from "@/public/SvgSprite"
+import Footer from '@/components/layout/Footer'
 
 
 interface RootLayoutProps {
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
            <SvgSprite/>
            <Header />
            <main >{children}</main>
+           <Footer/>
         </LanguageProvider>
       </body>
     </html>
