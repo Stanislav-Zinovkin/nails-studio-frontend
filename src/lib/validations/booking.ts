@@ -11,7 +11,7 @@ export const bookingSchema = z.object({
     date: z.string(),
     time: z.string(),
     hp_field: z.string().max(0).optional(),
-    rodoConsert: z.boolean().refine((val) => val === true, 'Consert required '), 
+    rodoConsent: z.boolean().refine((val) => val === true, 'Consent required '), 
 
 });
 

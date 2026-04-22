@@ -15,7 +15,7 @@ export default function BookingModal({ isOpen, onClose, locale, t }: any) {
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
     const [selectedService, setSelectedService] = useState<any>(null);
     const [selectedTime, setSelectedTime] = useState<string | null>(null);
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', date: '', time: '', rodoConsert: false, serviceId: 'id' });
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', date: '', time: '', rodoConsent: false, serviceId: 'id' });
 
     const getServiceName = (key: string) => {
         return t.pricesPage.services[key] || key;
@@ -59,7 +59,7 @@ export default function BookingModal({ isOpen, onClose, locale, t }: any) {
             service: serviceName,
             date: displayDate,
             time: formData.time,
-            rodoConsert: formData.rodoConsert,
+            rodoConsent: formData.rodoConsent,
             hp_field: hpFieldValue,
         };
         try {

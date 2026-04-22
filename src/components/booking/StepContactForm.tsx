@@ -66,8 +66,8 @@ export default function StepContactForm ({ formData, setFormData, handleSubmit, 
                             <input 
                                 type="checkbox"
                                 required
-                                checked={formData.rodoConsert}
-                                onChange={(e) => setFormData({...formData, rodoConsert: e.currentTarget.checked})}
+                                checked={formData.rodoConsent}
+                                onChange={(e) => setFormData({...formData, rodoConsent: e.currentTarget.checked})}
                                 className="mt-1 w-4 h-4 border-[#10069F]/20 rounded accent-[#10069F]"
                                 />
                                 <span className='text-[10px] text-[#10069F]/60 leading-tight'>
