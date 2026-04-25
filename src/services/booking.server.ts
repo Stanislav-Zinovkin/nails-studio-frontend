@@ -29,5 +29,30 @@ export const BookingServerService = {
                 }
             })
         })
+    },
+    async cancelBooking(bookingId: string) {
+        return await prisma.$transaction(async(tx) => {
+            const booking = await tx.booking.findUnique({
+                where: { id: bookingId}
+            });
+            if(!booking) throw new Error('BOOKING_NOT_FOUND');
+            if(booking.status === 'CANCELLED') throw new Error('BOOKING_ALREADY_CANCELLED');
+
+            const [day, month, year] = booking.date.split('.').map(Number);
+            const [hours, minutes] = booking.time.split(':').map(Number);
+            const visitDate = new Date(year, month - 1, day, hours, minutes);
+
+            const now = new Date();
+            const hoursDifference = (visitDate.getTime() - now.getTime()) / (1000 * 60 * 60);
+
+            if(hoursDifference < 7) {
+                throw new Error('TOO_LATE_TO_CANCEL');
+            }
+
+            return await tx.booking.update({
+                where: {id: bookingId },
+                data: {status: 'CANCELLED'}
+            })
+        })
     }
 }

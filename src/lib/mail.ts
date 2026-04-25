@@ -8,7 +8,8 @@ export const sendConfirmationEmail = async (
     name: string,
     service: string,
     date: string,
-    time: string
+    time: string,
+    bookingId: string
 ) => {
     try {
         await resend.emails.send({
@@ -26,6 +27,10 @@ export const sendConfirmationEmail = async (
             <li>⏰ <strong>Час:</strong> ${time}</li>
           </ul>
           <p style="margin-top: 30px; font-size: 14px; color: #888;">Чекаємо на вас за адресою: Poznań, ul. Owczarska 1</p>
+          <p style="font-size: 16px; color: #555;>Якщо ваші плани змінилися, ви можете скасувати запис (не пізніше ніж за 7 годин до візиту):</p>
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL}/cancel-booking/${bookingId}">
+              Скасувати запис
+            </a>
         </div>
       `,
         });
