@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
         // 3. Notifications
         await sendTelegramNotification(validatedData, newBooking.id);
         if (validatedData.email) {
-            sendConfirmationEmail(validatedData.email, validatedData.name, validatedData.service, validatedData.date, validatedData.time);
+            sendConfirmationEmail(validatedData.email, validatedData.name, validatedData.service, validatedData.date, validatedData.time, newBooking.id);
         }
 
         return NextResponse.json({ success: true, bookingId: newBooking.id }, { status: 201 });
