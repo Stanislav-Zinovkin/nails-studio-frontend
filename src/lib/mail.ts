@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { translations, Locale } from "@/data/translations";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export const sendConfirmationEmail = async (
     email: string,
     name: string,
@@ -12,11 +10,20 @@ export const sendConfirmationEmail = async (
     bookingId: string,
     locale: Locale = 'pl' 
 ) => {
+
+    const apiKey = process.env.RESEND_API_KEY;
     
+    if (!apiKey) {
+        console.error("CRITICAL: RESEND_API_KEY is missing in env variables!");
+        return;
+    }
+
+    const resend = new Resend(apiKey);
     const t = translations[locale];
 
     try {
-        await resend.emails.send({
+        
+        const { data, error } = await resend.emails.send({
             from: 'Wita Mosondz Manicure <onboarding@resend.dev>',
             to: email,
             subject: t.emails.confirmation.subject,
@@ -47,7 +54,14 @@ export const sendConfirmationEmail = async (
         </div>
       `,
         });
+
+        if (error) {
+            console.error("Resend API error details:", error);
+        } else {
+            console.log("Email sent successfully!", data);
+        }
+
     } catch (error) {
-        console.error("Email sending gone wrong", error)
+        console.error("Unexpected error in sendConfirmationEmail:", error);
     }
 }
