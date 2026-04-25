@@ -8,7 +8,7 @@ const redis = new Redis({
 
 export const bookingRateLimit = new Ratelimit({
     redis: redis,
-    limiter: Ratelimit.slidingWindow(3, "1 h"),
+    limiter: Ratelimit.slidingWindow(3, "2 m"),
     analytics: true,
     prefix: "@upstash/ratelimit",
 });

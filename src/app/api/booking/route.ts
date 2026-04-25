@@ -4,14 +4,23 @@ import { bookingRateLimit } from "@/lib/ratelimit";
 import { sendConfirmationEmail } from "@/lib/mail";
 import { sendTelegramNotification } from "@/lib/telegram/telegram";
 import { handleApiError } from "@/lib/error/error-handler";
-import { prisma } from "@/lib/prisma";
+import { BookingServerService } from "@/services/booking.server";
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
-        console.log("RECEIVED BODY:", body); // ДИВИСЬ СЮДИ В ТЕРМІНАЛІ
+        //0. Rate Limit
+        const ip = req.headers.get("x-forwarded-for") ?? "127.0.0.1";
+        const { success: RatelimitOK } = await bookingRateLimit.limit(ip);
 
-        // 1. Валідація
+        if (!RatelimitOK) {
+            return NextResponse.json({ error: "TOO_MANY-REQUESTS" }, { status: 429 });
+        }
+        
+
+        const body = await req.json();
+        if (body.hp_field) return NextResponse.json({ success: true, message: 'Bot trapped' });
+
+        // 1. Validation
         const result = bookingSchema.safeParse(body);
         
         if (!result.success) {
@@ -21,30 +30,9 @@ export async function POST(req: NextRequest) {
 
         const validatedData = result.data;
 
-        // 2. Транзакція (Race Condition Protection)
-        const newBooking = await prisma.$transaction(async (tx) => {
-            const existing = await tx.booking.findFirst({
-                where: {
-                    date: validatedData.date,
-                    time: validatedData.time,
-                    status: { in: ['PENDING', 'CONFIRMED'] }
-                }
-            });
-
-            if (existing) throw new Error('SLOT_ALREADY_OCCUPIED');
-
-            return await tx.booking.create({
-                data: {
-                    name: validatedData.name,
-                    email: validatedData.email || null,
-                    phone: validatedData.phone,
-                    service: validatedData.service,
-                    date: validatedData.date,
-                    time: validatedData.time,
-                    status: 'PENDING',
-                }
-            });
-        });
+        // 2.
+        const newBooking = await BookingServerService.create(validatedData);
+       
 
         // 3. Notifications
         await sendTelegramNotification(validatedData, newBooking.id);
