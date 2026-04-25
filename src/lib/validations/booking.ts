@@ -12,6 +12,7 @@ export const bookingSchema = z.object({
     time: z.string(),
     hp_field: z.string().max(0).optional(),
     rodoConsent: z.boolean().refine((val) => val === true, 'Consent required '), 
+    locale: z.string().optional().default('pl')
 
 });
 

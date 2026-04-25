@@ -61,6 +61,7 @@ export default function BookingModal({ isOpen, onClose, locale, t }: any) {
             time: formData.time,
             rodoConsent: formData.rodoConsent,
             hp_field: hpFieldValue,
+            locale: locale,
         };
         try {
             await sendBooking(bookingDetails);

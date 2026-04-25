@@ -9,7 +9,8 @@ export const translations = {
       bookvisit: "Zapisz się",
     },
     common: {
-      back: "Wstecz"
+      back: "Wstecz",
+      close: "Zamknij"
     },
     contactModal: {
       phone: "Telefon",
@@ -28,10 +29,28 @@ export const translations = {
       emailLabel: "Email",
       phoneLabel: "Telefon",
       submitBtn: "Zapisz się",
+      loadingText: "Rezerwacja...",
       booksyLink: "Zarezerwuj przez Booksy",
       or: "lub",
-      success: "Dziękujemy! Potwierdzenie zostało wysłane na Twój e-mail.",
+      successTitle: "Gotowe!",
+      successMessage: "Twój termin został zarezerwowany. Potwierdzenie wysłaliśmy na Twój e-mail.",
+      errorSlotTaken: "Ten termin jest już zajęty. Wybierz inną godzinę.",
+      errorGeneral: "Wystąpił błąd. Spróbuj ponownie.",
       rodoText: "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności",
+      privacyPolicyLink: "polityką prywatności",
+    },
+    emails: {
+      confirmation: {
+        subject: "Potwierdzenie wizyty - Vita Mosondz Manicure",
+        greeting: "Cześć",
+        thankYou: "Dziękujemy za wybranie naszego salonu!",
+        detailsTitle: "Szczegóły wizyty:",
+        service: "Usługa",
+        date: "Data",
+        time: "Godzina",
+        cancelText: "Jeśli chcesz odwołać wizytę, kliknij przycisk poniżej:",
+        cancelBtn: "Odwołaj wizytę"
+      }
     },
     hero: {
       title: "Vita Mosondz Manicure",
@@ -93,7 +112,8 @@ export const translations = {
       bookvisit: "Записатись",
     },
     common: {
-      back: "Назад"
+      back: "Назад",
+      close: "Закрити"
     },
     contactModal: {
       phone: "Телефон",
@@ -102,7 +122,7 @@ export const translations = {
       address: "Познань, вул. Овчарська 1"
     },
     bookingModal: {
-      title1:"Виберіть послугу",
+      title1: "Виберіть послугу",
       title: "Запис на візит",
       pickDate: "Оберіть дату",
       pickTime: "Оберіть час візиту",
@@ -112,11 +132,28 @@ export const translations = {
       emailLabel: "Email",
       phoneLabel: "Телефон",
       submitBtn: "Записатися",
+      loadingText: "Резервуємо...",
       booksyLink: "Забронювати через Booksy",
       or: "або",
-      success: "Дякуємо! Підтвердження надіслано на вашу пошту.",
-      rodoText: "Я погоджуюся на обробку моїх персональних даних згідно з політикою конфіденційності ",
-      
+      successTitle: "Готово!",
+      successMessage: "Ваш візит зарезервовано. Ми надіслали підтвердження на вашу пошту.",
+      errorSlotTaken: "Цей час уже зайнятий. Будь ласка, оберіть інший слот.",
+      errorGeneral: "Сталася помилка. Спробуйте ще раз.",
+      rodoText: "Я погоджуюся на обробку моїх персональних даних згідно з ",
+      privacyPolicyLink: "політикою конфіденційності",
+    },
+    emails: {
+      confirmation: {
+        subject: "Підтвердження запису - Vita Mosondz Manicure",
+        greeting: "Вітаємо",
+        thankYou: "Дякуємо, що обрали наш салон!",
+        detailsTitle: "Деталі вашого візиту:",
+        service: "Послуга",
+        date: "Дата",
+        time: "Час",
+        cancelText: "Якщо ваші плани змінилися, ви можете скасувати візит за посиланням нижче:",
+        cancelBtn: "Скасувати запис"
+      }
     },
     hero: {
       title: "Vita Mosondz Manicure",
@@ -178,7 +215,8 @@ export const translations = {
       bookvisit: "Book now",
     },
     common: {
-      back: "Back"
+      back: "Back",
+      close: "Close"
     },
     contactModal: {
       phone: "Phone",
@@ -197,10 +235,28 @@ export const translations = {
       emailLabel: "Email",
       phoneLabel: "Phone Number",
       submitBtn: "Book Now",
+      loadingText: "Booking...",
       booksyLink: "Book via Booksy",
       or: "or",
-      success: "Thank you! Confirmation has been sent to your email.",
-      rodoText: 'I agree to the processing of my personal data in accordance with the privacyPolicy',
+      successTitle: "Success!",
+      successMessage: "Your visit has been booked. We sent a confirmation to your email.",
+      errorSlotTaken: "This time slot is already taken. Please choose another one.",
+      errorGeneral: "Something went wrong. Please try again.",
+      rodoText: "I agree to the processing of my personal data in accordance with the ",
+      privacyPolicyLink: "privacy policy",
+    },
+    emails: {
+      confirmation: {
+        subject: "Booking Confirmation - Vita Mosondz Manicure",
+        greeting: "Hello",
+        thankYou: "Thank you for choosing our salon!",
+        detailsTitle: "Your booking details:",
+        service: "Service",
+        date: "Date",
+        time: "Time",
+        cancelText: "If you need to change your plans, you can cancel your visit using the button below:",
+        cancelBtn: "Cancel booking"
+      }
     },
     hero: {
       title: "Vita Mosondz Manicure",
