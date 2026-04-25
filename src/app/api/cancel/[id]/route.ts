@@ -4,10 +4,10 @@ import { handleApiError } from "@/lib/error/error-handler";
 
 export async function PATCH(
     req:NextRequest,
-    {params} : {params: {id: string } }
+    {params} : {params: Promise<{id: string }> }
 ) {
     try {
-        const { id } = params;
+        const { id } =  await params;
         await BookingServerService.cancelBooking(id);
 
         return NextResponse.json({ success: true, message: 'Booking cancelled'});
