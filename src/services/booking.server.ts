@@ -1,12 +1,13 @@
 import { prisma } from "@/lib/prisma";
 import { bookingSchema } from "@/lib/validations/booking";
 import { z } from "zod";
+import { Prisma } from "@prisma/client";
 
 type CreateBookingData = z.infer<typeof bookingSchema>;
 
 export const BookingServerService = {
     async create( data: CreateBookingData) {
-        return await prisma.$transaction(async (tx) => {
+        return await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
             const existing = await tx.booking.findFirst({
                 where: {
                     date: data.date,
@@ -31,7 +32,7 @@ export const BookingServerService = {
         })
     },
     async cancelBooking(bookingId: string) {
-        return await prisma.$transaction(async(tx) => {
+        return await prisma.$transaction(async(tx: Prisma.TransactionClient) => {
             const booking = await tx.booking.findUnique({
                 where: { id: bookingId}
             });
